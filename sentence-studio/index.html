@@ -1,0 +1,1657 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="An offline bilingual English grammar studio for Spanish-speaking beginners: fix mistakes, reorder words, and build complex sentences.">
+  <title>Sentence Studio | English Grammar Lab</title>
+  <style>
+    :root{--bg:#f8f8f4;--paper:#ffffff;--ink:#18302e;--muted:#61716c;--line:#e4e9e4;--soft:#eef4ee;--mint:#d6eadf;--green:#0c6955;--green-dark:#064f41;--yellow:#f4e6b6;--purple:#73649c;--danger:#a7473c;--danger-bg:#fdf1ee;--good:#176b4e;--good-bg:#eaf5ec;--shadow:0 15px 44px rgba(15,52,39,.055);--radius:22px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);line-height:1.48}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #b6cbbf;outline-offset:2px}button:disabled{cursor:not-allowed;opacity:.55}.hidden,[hidden]{display:none!important}
+    .site-width{max-width:1340px;margin:0 auto;padding:0 36px}.header-wrap{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:20}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:13px;min-width:234px}.brand-mark{width:41px;height:41px;border-radius:13px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px;letter-spacing:-2px;transform:rotate(-3deg);box-shadow:0 5px 12px #0b6e5440}.brand-copy strong{display:block;font-size:14px;letter-spacing:.05em}.brand-copy span{display:block;font-size:11px;color:var(--muted);letter-spacing:.16em;font-weight:700}.tabs{display:flex;align-items:center;gap:5px;padding:4px;background:#f2f5f0;border-radius:13px}.tab{border:0;background:transparent;padding:10px 17px;border-radius:10px;font-size:13px;color:#596b63;font-weight:750;transition:background .18s,color .18s}.tab:hover{color:var(--ink)}.tab.active{background:#fff;color:var(--green-dark);box-shadow:0 2px 9px #163e2814}.utility{display:flex;align-items:center;gap:13px}.tiny-progress{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);font-weight:750;white-space:nowrap}.progress-ring{--p:0%;height:30px;width:30px;border-radius:50%;background:conic-gradient(var(--green) var(--p),#e4ede5 0);display:grid;place-items:center}.progress-ring:after{content:"";display:block;border-radius:50%;width:22px;height:22px;background:#fff}.light-btn{background:#fff;color:var(--green-dark);border:1px solid #dce8df;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:800}.light-btn:hover{background:#f6faf6}
+    .hero{position:relative;overflow:hidden;min-height:263px;background:radial-gradient(circle at 84% 7%,#e4e9ca 0,transparent 23%),linear-gradient(120deg,#e3efe7 4%,#f4f4e9 65%,#f0eadb);border-bottom:1px solid #dce6d9}.hero-inner{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;padding-top:45px;padding-bottom:45px}.eyebrow{font-size:11px;font-weight:850;letter-spacing:.19em;color:var(--green);text-transform:uppercase;margin-bottom:13px;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:19px;height:2px;background:var(--green);display:inline-block}.hero h1{font-size:clamp(36px,4.4vw,62px);line-height:1.06;letter-spacing:-.052em;margin:0 0 14px;font-weight:780;max-width:740px}.hero h1 em{font-style:normal;color:var(--green)}.hero p{font-size:15px;color:#516c60;max-width:590px;margin:0;line-height:1.65}.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:19px}.hero-chip{border-radius:100px;padding:7px 11px;background:#ffffffb9;border:1px solid #d5e7d8;font-size:11px;font-weight:800;color:#446157}.hero-side{width:170px;height:155px;border-radius:27px;border:1px solid #ffffffc4;background:#ffffff8a;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:rotate(5deg);box-shadow:0 22px 50px #19463016}.hero-side .huge{font-size:67px;font-weight:800;letter-spacing:-.08em;color:var(--green);line-height:1}.hero-side span{font-size:11px;font-weight:850;color:#70857a;letter-spacing:.13em;text-transform:uppercase}
+    main>section.screen{padding-top:34px;padding-bottom:65px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:24px}.section-kicker{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:#647b6f;font-weight:850;margin:0 0 6px}.section-head h2{font-size:28px;letter-spacing:-.04em;margin:0 0 3px}.section-head p{margin:0;color:var(--muted);font-size:13px}.small-link-btn{border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--green-dark);padding:10px 15px;font-size:12px;font-weight:750}.small-link-btn:hover{background:var(--soft)}.layout{display:grid;grid-template-columns:290px minmax(0,1fr);gap:23px;align-items:start}.panel,.exercise-card,.widget,.build-card,.rule-card,.compose-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.panel{padding:18px}.panel-heading{color:#65766b;font-size:10px;font-weight:850;letter-spacing:.15em;text-transform:uppercase;margin:0 0 12px 8px}.skill-list{display:grid;gap:4px}.skill{display:flex;gap:11px;align-items:center;text-align:left;border:1px solid transparent;background:transparent;width:100%;padding:10px 9px;border-radius:13px;color:#36534a}.skill:hover{background:#f6faf5}.skill.active{background:#e9f3eb;border-color:#c5e0cc}.skill-icon{height:34px;width:34px;min-width:34px;border-radius:9px;display:grid;place-items:center;background:#ecf1eb;color:#5c7768;font-size:12px;font-weight:850}.skill.active .skill-icon{background:var(--green);color:#fff}.skill strong{display:block;font-size:12px;line-height:1.3}.skill small{display:block;font-size:10px;color:#7b8a7d;margin-top:2px}.skill-count{margin-left:auto;color:#7c927f;font-size:11px;font-weight:800}.class-tip{background:#f3f4ec;border:1px solid #e7eadc;margin-top:17px;padding:16px;border-radius:15px}.class-tip .mini-icon{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:#e5eddc;font-size:13px;margin-bottom:10px}.class-tip strong{display:block;font-size:12px;margin-bottom:5px}.class-tip p{font-size:11px;color:#667365;margin:0;line-height:1.65}
+    .mode-selector{padding:8px;background:#fff;border:1px solid var(--line);border-radius:16px;display:flex;gap:6px;margin-bottom:15px}.mode{flex:1;padding:12px 9px;border:0;border-radius:10px;background:transparent;color:var(--muted);font-size:12px;font-weight:800}.mode.active{color:var(--green-dark);background:#ebf4ed}.mode .mode-number{opacity:.6;font-size:10px;padding-right:5px}.exercise-card{padding:31px 36px 28px;min-height:410px}.exercise-top{display:flex;align-items:center;justify-content:space-between;gap:13px}.caps{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--muted)}.pill{background:#f0f4ef;border:1px solid #e2e8e1;border-radius:100px;color:#5b7667;font-size:10px;font-weight:850;padding:6px 10px;white-space:nowrap}.pill.notebook{background:#fff3df;border-color:#f3dfb5;color:#916622}.question-counter{font-variant-numeric:tabular-nums}.thinbar{height:5px;background:#ecf1ea;border-radius:15px;overflow:hidden;margin:15px 0 30px}.thinbar>div{height:100%;width:0;background:var(--green);border-radius:15px;transition:width .28s}.prompt-overline{font-weight:850;font-size:11px;letter-spacing:.15em;color:var(--green);text-transform:uppercase;margin:0 0 13px}.problem{font-size:clamp(23px,2.6vw,34px);line-height:1.32;letter-spacing:-.035em;max-width:760px;margin:0 0 8px;font-weight:730;overflow-wrap:anywhere}.instruction{font-size:13px;color:#71817a;margin:0 0 24px}.choices{display:grid;gap:11px;margin:22px 0 13px}.choice{display:flex;align-items:center;gap:13px;text-align:left;border:1px solid #dfe6dd;background:#fbfcfa;border-radius:13px;padding:17px 18px;font-size:16px;font-weight:640;line-height:1.43;color:#283c34;transition:all .12s;overflow-wrap:anywhere}.choice:hover{border-color:#95bea1;background:#f4faf5}.choice .letter{width:27px;height:27px;display:grid;place-items:center;border-radius:8px;font-size:12px;font-weight:850;background:#e9f0e9;color:#496a58;min-width:27px}.choice.correct{border-color:#8ccbaa;background:var(--good-bg);color:#235b44}.choice.incorrect{border-color:#edb7ad;background:var(--danger-bg)}.choice.selected .letter{background:var(--green);color:#fff}.input-label{display:block;font-size:11px;font-weight:850;color:#617c6e;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}.repair-input{display:block;width:100%;border:1px solid #cbddd0;background:#fafdF9;border-radius:13px;padding:16px 18px;font-size:16px;line-height:1.5;color:var(--ink);transition:border .14s}.repair-input:focus{border-color:#73a68a}.reorder-zone{padding:13px;min-height:77px;background:#f8faf7;border-radius:14px;border:1px dashed #b9d6bf;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.reorder-zone:empty:after{content:'Tap word tiles to build your sentence';color:#92a398;font-size:13px}.tokens{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.token{padding:10px 13px;border-radius:9px;border:1px solid #cbdccc;background:#fff;font-weight:700;font-size:13px;color:#375b47;box-shadow:0 2px 5px #193d2310}.token:hover{background:#e7f3e9;border-color:#91c5a1}.token.is-picked{background:#d9ebde;border-color:#a3cbb0;color:#285d40}.helper-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:20px}.primary{background:var(--green);color:white;border:1px solid var(--green);border-radius:11px;padding:12px 17px;font-size:12px;font-weight:850;transition:background .15s}.primary:hover{background:var(--green-dark)}.secondary{background:#fff;border:1px solid #dce6df;color:#3d6d57;border-radius:11px;padding:11px 15px;font-size:12px;font-weight:790}.secondary:hover{background:#f5faf4}.feedback{margin-top:18px;padding:15px 17px;border-radius:14px;border:1px solid #e4ebe4;background:#f8faf8}.feedback.good{border-color:#b4d9c2;background:var(--good-bg)}.feedback.bad{border-color:#efd6cb;background:#fff7f3}.feedback strong{display:block;font-size:13px;margin-bottom:5px}.feedback p{font-size:12px;color:#5b6e61;margin:4px 0 0;line-height:1.6}.feedback .model-answer{font-size:15px;font-weight:800;margin-top:9px;color:#164c3d}.feedback .es-line{color:#798779;font-style:italic}.floating-rule{padding:13px 16px;border:1px solid #dbe9de;border-radius:14px;background:#f5faf5;margin:14px 0 0}.floating-rule strong{display:block;font-size:12px;color:var(--green-dark)}.floating-rule p{font-size:12px;margin:5px 0;color:#5d7365;line-height:1.6}.exercise-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px}.exercise-footer .helper{font-size:11px;color:#738879}.nav-arrows{display:flex;gap:8px}.streak-card{display:flex;align-items:center;justify-content:space-between;margin-top:15px;padding:17px 20px;background:#fff;border:1px solid var(--line);border-radius:17px}.streak-card strong{font-size:13px}.streak-card p{font-size:11px;color:var(--muted);margin:2px 0 0}.streak-value{color:var(--green);font-size:23px;font-weight:840;letter-spacing:-.05em}
+    .build-tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:19px}.build-step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;color:#536c5e;font-size:12px;font-weight:800}.build-step.active{background:var(--green);border-color:var(--green);color:#fff}.build-step small{display:block;font-size:10px;font-weight:650;opacity:.7;margin-top:2px}.builder-grid{display:grid;grid-template-columns:minmax(0,1fr) 296px;gap:22px;align-items:start}.build-card,.compose-card{padding:28px 31px}.studio-intro{margin:0 0 12px;color:var(--muted);font-size:13px}.target-box{padding:18px 19px;background:#f1f6f0;border:1px solid #dfebe0;border-radius:14px;margin:15px 0 19px}.target-box small{font-size:10px;font-weight:900;letter-spacing:.13em;color:#658170;text-transform:uppercase}.target-box .translation{font-size:17px;font-weight:750;margin:6px 0 0;line-height:1.5}.target-box .english-caption{font-size:12px;color:#64816d;margin-top:5px}.build-area{border:1px dashed #95bfa3;border-radius:15px;min-height:112px;padding:14px;display:flex;gap:9px;align-items:center;align-content:center;flex-wrap:wrap;background:#fbfdfa}.build-area.empty:before{content:'Your sentence appears here / Tu frase aparece aqui';color:#9bb09d;font-size:13px}.build-bank{display:flex;gap:9px;flex-wrap:wrap;min-height:74px;margin-top:14px}.build-bank .token{background:#f0f6ee}.build-bank .token:hover{background:#e2f0e4}.build-area .token{background:#dcefe2;border-color:#9cc6aa}.step-progress{display:flex;align-items:center;justify-content:space-between;color:#74877a;font-size:12px;margin-bottom:10px}.info-card{background:#f1f5e9;border:1px solid #e2e9d5;border-radius:17px;padding:19px;margin-bottom:16px}.info-card .icon-circle{width:34px;height:34px;border-radius:10px;background:#e2edda;display:grid;place-items:center;color:#527956;font-weight:850;margin-bottom:10px}.info-card h3{font-size:14px;margin:0 0 7px}.info-card p{font-size:12px;color:#687966;margin:0 0 8px;line-height:1.65}.info-card .formula{font-size:13px;font-weight:800;color:#2f6750}.mini-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}.metric strong{font-size:25px;display:block;color:var(--green);letter-spacing:-.04em}.metric span{display:block;font-size:10px;color:var(--muted);font-weight:750}.studio-subnav{display:flex;gap:7px;background:#eff4ef;border-radius:14px;padding:6px;margin-bottom:19px;max-width:350px}.subnav{flex:1;padding:10px;border:0;border-radius:10px;background:transparent;font-size:12px;font-weight:850;color:#5d7163}.subnav.active{background:#fff;color:var(--green-dark);box-shadow:0 1px 8px #213c2812}
+    .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.field{min-width:0}.field label{display:block;color:#607a6b;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid #cbdbce;border-radius:11px;background:#fdfefd;font-size:13px;color:var(--ink);min-height:48px}.field textarea{min-height:90px;resize:vertical}.preview{margin-top:19px;background:#eaf3e8;border-radius:16px;border:1px solid #d3e7d5;padding:22px;min-height:105px}.preview small{display:block;color:#66866c;font-weight:850;letter-spacing:.12em;font-size:10px;text-transform:uppercase;margin-bottom:9px}.preview p{font-size:21px;font-weight:780;letter-spacing:-.025em;margin:0;line-height:1.45;overflow-wrap:anywhere}.checks{margin-top:20px;padding:15px 18px;background:#f8faf6;border:1px solid #e5eee4;border-radius:15px}.checks h4{font-size:12px;margin:0 0 9px}.checks label{display:flex;align-items:center;gap:9px;color:#536e5e;font-size:12px;margin:7px 0;cursor:pointer}.checks input{accent-color:var(--green)}.saved-items{margin-top:14px;display:grid;gap:8px}.saved-item{padding:11px 12px;border:1px solid #e0e9df;border-radius:10px;background:#fff;font-size:12px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.saved-item button{border:0;background:transparent;color:#945c4c;font-weight:800;font-size:12px;cursor:pointer}
+    .rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.rule-card{padding:24px 25px}.rule-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}.rule-head .rule-icon{width:39px;height:39px;min-width:39px;border-radius:12px;background:#e7f3e9;color:var(--green);font-size:14px;font-weight:880;display:grid;place-items:center}.rule-head h3{font-size:16px;margin:0}.rule-card>p{font-size:12px;color:#65796a;margin:0 0 12px;line-height:1.65}.formula-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#879589;font-weight:800}.formula-box{margin:6px 0 13px;font-weight:800;color:#305c47;font-size:13px;padding:11px 12px;background:#f3f8f2;border-radius:9px;overflow-wrap:anywhere}.samplebad,.samplegood{font-size:13px;margin-top:5px}.samplebad{color:#ac6353;text-decoration:line-through}.samplegood{color:var(--green-dark);font-weight:700}.foot{margin-top:38px;padding:30px 0;border-top:1px solid #e2e9e1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;color:#819083;font-size:11px}.foot-actions{display:flex;gap:9px}.foot .secondary{font-size:11px;padding:8px 10px}.toast{position:fixed;right:25px;bottom:25px;z-index:80;border-radius:13px;background:#143e30;color:#fff;padding:14px 18px;box-shadow:0 15px 35px #142b2840;font-size:12px;font-weight:700;max-width:min(390px,90vw);opacity:0;pointer-events:none;transform:translateY(9px);transition:all .25s}.toast.show{opacity:1;transform:translateY(0)}body.hide-es .es-line{display:none!important}
+    .mobile-scroll-label{display:none}@media (max-width:810px){.mobile-scroll-label{display:inline}}
+    @media (max-width:1070px){.brand{min-width:auto}.layout{grid-template-columns:250px minmax(0,1fr)}.builder-grid{grid-template-columns:minmax(0,1fr) 240px}.hero-side{display:none}}
+    @media (max-width:810px){.site-width{padding-left:20px;padding-right:20px}.topbar{height:auto;padding-top:14px;padding-bottom:13px;flex-wrap:wrap}.tabs{order:3;width:100%;justify-content:center}.tab{flex:1}.brand-copy span{font-size:10px}.tiny-progress{display:none}.hero-inner{padding-top:31px;padding-bottom:35px}.hero{min-height:auto}.hero h1{font-size:39px}.layout,.builder-grid{grid-template-columns:1fr}.skills-wrap{overflow:auto}.skill-list{display:flex;gap:7px;overflow:auto;padding-bottom:8px}.skill{min-width:190px}.panel{padding:12px}.panel-heading{margin:5px 10px 10px}.class-tip{display:none}.rule-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-wrap:wrap}.exercise-card{padding:24px 22px}.streak-card{padding:13px 16px}}
+    @media (max-width:550px){.site-width{padding-left:14px;padding-right:14px}.brand-mark{height:35px;width:35px}.hero h1{font-size:34px}.hero p{font-size:13px}.hero-chip{font-size:10px}.section-head h2{font-size:25px}.section-head p{font-size:12px}.mode-selector{padding:5px;gap:2px}.mode{font-size:11px;padding:10px 3px}.mode .mode-number{display:none}.problem{font-size:24px}.choice{font-size:14px;padding:14px 12px}.exercise-top{flex-wrap:wrap}.exercise-card{padding:20px 16px}.nav-arrows button{padding:9px 10px}.exercise-footer .helper{display:none}.build-card,.compose-card{padding:20px 16px}.formgrid{grid-template-columns:1fr}.preview p{font-size:18px}.build-step{flex:1;min-width:42%;padding:10px}.rule-card{padding:22px 19px}.utility .light-btn{font-size:11px;padding:8px 10px}}
+    @media (prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<div class="header-wrap"><header class="site-width topbar">
+  <div class="brand"><div class="brand-mark" aria-hidden="true">S<span style="font-size:13px">+</span></div><div class="brand-copy"><strong>SENTENCE STUDIO</strong><span>ENGLISH GRAMMAR LAB</span></div></div>
+  <nav class="tabs" aria-label="Choose a learning area"><button class="tab active" data-screen="practice" type="button">01 · Practice lab</button><button class="tab" data-screen="studio" type="button">02 · Sentence studio</button><button class="tab" data-screen="rules" type="button">Grammar guide</button></nav>
+  <div class="utility"><span class="tiny-progress"><span class="progress-ring" id="headerRing"></span><span id="headerCount">0 mastered</span></span><button type="button" class="light-btn" id="languageToggle" aria-pressed="true">ES hints: On</button></div>
+</header></div>
+<div class="hero"><div class="site-width hero-inner"><div><div class="eyebrow">Learn it. Build it. Say it.</div><h1>Make English <em>sound natural.</em></h1><p>Real grammar mistakes, clear explanations, and hands-on sentence building — designed for Spanish-speaking learners who want to express their own ideas.</p><div class="hero-chips"><span class="hero-chip" id="heroCount">102 grammar examples</span><span class="hero-chip" id="heroBuildCount">48 sentence builds</span><span class="hero-chip">English + Español</span><span class="hero-chip">Works offline</span></div></div><div class="hero-side" aria-hidden="true"><div class="huge">A<span style="font-size:35px">↗</span></div><span>say more</span></div></div></div>
+<main class="site-width">
+<section class="screen" id="screen-practice">
+  <div class="section-head"><div><div class="section-kicker">Module 01 / Recognize and repair</div><h2>Practice lab</h2><p>Start with her notebook mistakes, then practice the same pattern with new sentences.</p></div><button type="button" class="small-link-btn" id="shuffleQuestions">↻ Shuffle examples</button></div>
+  <div class="layout"><aside class="panel skills-wrap"><div class="panel-heading">Choose a grammar skill <span style="font-weight:650;letter-spacing:0;text-transform:none" class="mobile-scroll-label"> · swipe for more →</span></div><div id="skillList" class="skill-list"></div><div class="class-tip"><div class="mini-icon">✦</div><strong>For the teacher</strong><p>Ask her to explain the rule aloud before you reveal the correction. Then have her create a completely new example.</p></div></aside>
+  <div><div class="mode-selector" role="group" aria-label="Practice style"><button class="mode active" data-mode="choose" type="button"><span class="mode-number">01</span> Spot the natural sentence</button><button class="mode" data-mode="fix" type="button"><span class="mode-number">02</span> Fix the mistake</button><button class="mode" data-mode="order" type="button"><span class="mode-number">03</span> Rebuild the sentence</button></div>
+  <div class="exercise-card" id="exerciseCard"></div><div class="streak-card"><div><strong>Small steps, stronger sentences.</strong><p id="skillProgressText">Choose a grammar skill to begin.</p></div><div class="streak-value" id="streakCounter">0 ✓</div></div></div></div>
+</section>
+<section class="screen" id="screen-studio" hidden>
+  <div class="section-head"><div><div class="section-kicker">Module 02 / Build and connect</div><h2>Complex sentence studio</h2><p>Go from a short idea to a complete sentence with reasons, contrasts and imagined situations.</p></div><button class="small-link-btn" id="jumpToRules" type="button">View grammar guide ↗</button></div>
+  <div class="studio-subnav" role="group" aria-label="Sentence studio mode"><button type="button" class="subnav active" data-studiomode="guided">Guided sentence builds</button><button type="button" class="subnav" data-studiomode="compose">Create your own</button></div>
+  <div id="guidedStudio"><div class="build-tabs" id="buildTabs"></div><div class="builder-grid"><div class="build-card" id="guidedCard"></div><aside><div class="info-card" id="buildInfo"></div><div class="mini-metrics"><div class="metric"><strong id="guidedDone">0</strong><span>CHALLENGES SOLVED</span></div><div class="metric"><strong id="guidedTotal">48</strong><span>CHALLENGES AVAILABLE</span></div></div></aside></div></div>
+  <div id="composeStudio" hidden><div class="builder-grid"><div class="compose-card"><div class="section-kicker">Make something new</div><h3 style="font-size:23px;letter-spacing:-.03em;margin:2px 0 7px">Write your own complex sentence</h3><p class="studio-intro">Choose a connector, then combine two complete ideas. Try the suggestions first, or type your own clauses.</p><div class="field" style="max-width:380px"><label for="composePattern">Sentence pattern</label><select id="composePattern"></select></div><div class="formgrid"><div class="field"><label for="composeA" id="composeLabelA">First idea</label><select id="composeA"></select><textarea id="customA" hidden spellcheck="true" placeholder="Write the first part..."></textarea></div><div class="field"><label for="composeB" id="composeLabelB">Second idea</label><select id="composeB"></select><textarea id="customB" hidden spellcheck="true" placeholder="Write the second part..."></textarea></div></div><label style="display:flex;gap:9px;align-items:center;margin-top:15px;font-size:12px;color:#597565;cursor:pointer"><input type="checkbox" id="customMode" style="accent-color:var(--green)"> Write both parts myself / Escribir mis propias ideas</label><div class="preview" aria-live="polite"><small>Your complete sentence</small><p id="composePreview"></p></div><div class="helper-actions"><button class="primary" type="button" id="saveCompose">＋ Save to my notebook</button><button class="secondary" type="button" id="copyCompose">Copy sentence</button><button class="secondary" type="button" id="speakCompose">▶ Hear sentence</button></div><div class="checks"><h4>Self-check before you save / Antes de guardar</h4><label><input type="checkbox" class="composeCheck"> Both clauses have a clear subject and verb.</label><label><input type="checkbox" class="composeCheck"> Adjectives and prepositions are in English order.</label><label><input type="checkbox" class="composeCheck"> My connector makes sense and punctuation is correct.</label></div></div><aside><div class="info-card"><div class="icon-circle">✎</div><h3>Make the sentence your own</h3><p>Use the suggestions as a starting point, then type about your life, music, work, or travel.</p><p class="es-line">Usa las sugerencias como ejemplo, pero intenta escribir sobre tu propia vida.</p><p style="font-size:11px;color:#64816a;margin:0">This is a writing canvas, not an AI grammar grader. Review original writing with your teacher.</p></div><div class="panel"><div class="panel-heading" style="margin-left:0">My sentence notebook</div><div id="savedSentences" class="saved-items"></div></div></aside></div></div>
+</section>
+<section class="screen" id="screen-rules" hidden>
+  <div class="section-head"><div><div class="section-kicker">Reference / Keep nearby</div><h2>Grammar guide</h2><p>Short bilingual explanations with examples based on real learner mistakes.</p></div><button type="button" class="small-link-btn" id="rulesToPractice">Start practicing ↗</button></div><div id="ruleGrid" class="rule-grid"></div>
+</section>
+<footer class="foot"><span>Sentence Studio · Teacher-built practice · No account, ads or external services. Progress is saved locally when supported; export it anytime.</span><div class="foot-actions"><button class="secondary" type="button" id="exportProgress">Export progress</button><button class="secondary" type="button" id="resetProgress">Reset progress</button></div></footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="application/json" id="lessonData">{
+  "categories": [
+    {
+      "id": "adjectives",
+      "title": "Adjectives + nouns",
+      "es": "Adjetivos y sustantivos",
+      "icon": "Aa",
+      "rule": "The adjective usually comes BEFORE the noun.",
+      "rule_es": "El adjetivo normalmente va ANTES del sustantivo.",
+      "formula": "adjective + noun",
+      "example": "a beautiful song"
+    },
+    {
+      "id": "subjects",
+      "title": "Subjects + full sentences",
+      "es": "Sujeto y oraciones completas",
+      "icon": "I",
+      "rule": "English statements normally need a subject: I, you, she, he, it, we, they.",
+      "rule_es": "En inglés normalmente hay que decir el sujeto; en español a veces se omite.",
+      "formula": "subject + verb + detail",
+      "example": "It helps me learn."
+    },
+    {
+      "id": "de",
+      "title": "Spanish \"de\" to English",
+      "es": "Cuando \"de\" NO es \"of\"",
+      "icon": "de",
+      "rule": "Spanish de can become a noun modifier, a possessive, from, of, or another structure.",
+      "rule_es": "No traduzcas 'de' siempre como 'of'. A veces usamos dos sustantivos juntos, la forma posesiva ('s), from u of.",
+      "formula": "English class / my sister's song / music from Peru",
+      "example": "an English class"
+    },
+    {
+      "id": "modals",
+      "title": "Modal + base verb",
+      "es": "Modales + verbo base",
+      "icon": "M",
+      "rule": "After can, could, should, would, will, might and must, use the BASE verb (no to).",
+      "rule_es": "Después de can, could, should, would, will, might y must, usa el verbo base (sin to).",
+      "formula": "subject + modal + base verb",
+      "example": "You should practice."
+    },
+    {
+      "id": "wouldlike",
+      "title": "Would like to",
+      "es": "Me gustaría: would like to",
+      "icon": "to",
+      "rule": "Would like to + base verb expresses a wish or polite desire.",
+      "rule_es": "Me gustaría + infinitivo se expresa con would like to + verbo base.",
+      "formula": "subject + would like + to + verb",
+      "example": "I would like to travel."
+    },
+    {
+      "id": "negatives",
+      "title": "Negatives + questions",
+      "es": "Negaciones y preguntas",
+      "icon": "?!",
+      "rule": "Put not AFTER the modal. Questions usually begin with the modal.",
+      "rule_es": "Pon not Después del modal. En preguntas, normalmente el modal va antes del sujeto.",
+      "formula": "subject + should not + verb / Can + subject + verb?",
+      "example": "You should not drink that."
+    },
+    {
+      "id": "conditionals",
+      "title": "If + would / could",
+      "es": "Condicionales imaginarios",
+      "icon": "if",
+      "rule": "For imaginary situations: If + past simple, subject + would/could + base verb.",
+      "rule_es": "Situación imaginaria: If + pasado simple, sujeto + would/could + verbo base.",
+      "formula": "If I had time, I would practice.",
+      "example": "If I had a piano, I would play."
+    },
+    {
+      "id": "prepositions",
+      "title": "Prepositions",
+      "es": "Preposiciones útiles",
+      "icon": "at",
+      "rule": "English uses fixed combinations: listen to, good at, interested in, on Monday, go home.",
+      "rule_es": "Memoriza combinaciones: listen to, good at, interested in, on Monday, go home.",
+      "formula": "listen to + music / go home / on Friday",
+      "example": "I listen to music on Friday."
+    },
+    {
+      "id": "adverbs",
+      "title": "Good vs. well",
+      "es": "Good vs. well",
+      "icon": "↗",
+      "rule": "Adjectives describe nouns. Adverbs describe HOW an action happens: good food, cook well.",
+      "rule_es": "Un adjetivo describe un sustantivo; un adverbio describe CÓMO ocurre la acción.",
+      "formula": "a good singer / she sings well",
+      "example": "She sings beautifully."
+    }
+  ],
+  "questions": [
+    {
+      "id": "adjectives-01",
+      "category": "adjectives",
+      "wrong": "My coworker Venezuelan makes hallacas.",
+      "correct": "My Venezuelan coworker makes hallacas.",
+      "tip": "Nationality goes before coworker.",
+      "notebook": true
+    },
+    {
+      "id": "adjectives-02",
+      "category": "adjectives",
+      "wrong": "I want a class short of English.",
+      "correct": "I want a short English class.",
+      "tip": "Use short + English + class.",
+      "notebook": true
+    },
+    {
+      "id": "adjectives-03",
+      "category": "adjectives",
+      "wrong": "She is a teacher native.",
+      "correct": "She is a native English-speaking teacher.",
+      "tip": "Descriptions come before teacher.",
+      "notebook": true
+    },
+    {
+      "id": "adjectives-04",
+      "category": "adjectives",
+      "wrong": "I could visit Argentina South.",
+      "correct": "I could visit southern Argentina.",
+      "tip": "Use southern before Argentina.",
+      "notebook": true
+    },
+    {
+      "id": "adjectives-05",
+      "category": "adjectives",
+      "wrong": "I like music relaxing.",
+      "correct": "I like relaxing music.",
+      "tip": "Put relaxing before music.",
+      "notebook": false
+    },
+    {
+      "id": "adjectives-06",
+      "category": "adjectives",
+      "wrong": "This is a song beautiful.",
+      "correct": "This is a beautiful song.",
+      "tip": "Beautiful describes the noun song.",
+      "notebook": false
+    },
+    {
+      "id": "adjectives-07",
+      "category": "adjectives",
+      "wrong": "I want a guitar new.",
+      "correct": "I want a new guitar.",
+      "tip": "New goes before guitar.",
+      "notebook": false
+    },
+    {
+      "id": "adjectives-08",
+      "category": "adjectives",
+      "wrong": "She has a voice powerful.",
+      "correct": "She has a powerful voice.",
+      "tip": "Powerful describes voice.",
+      "notebook": false
+    },
+    {
+      "id": "adjectives-09",
+      "category": "adjectives",
+      "wrong": "He plays music Colombian.",
+      "correct": "He plays Colombian music.",
+      "tip": "Colombian describes the type of music.",
+      "notebook": false
+    },
+    {
+      "id": "adjectives-10",
+      "category": "adjectives",
+      "wrong": "We visited a cafe small.",
+      "correct": "We visited a small cafe.",
+      "tip": "Small goes before cafe.",
+      "notebook": false
+    },
+    {
+      "id": "adjectives-11",
+      "category": "adjectives",
+      "wrong": "My friend is a singer talented.",
+      "correct": "My friend is a talented singer.",
+      "tip": "Talented comes before singer.",
+      "notebook": false
+    },
+    {
+      "id": "adjectives-12",
+      "category": "adjectives",
+      "wrong": "I need a playlist calm.",
+      "correct": "I need a calm playlist.",
+      "tip": "Calm comes before playlist.",
+      "notebook": false
+    },
+    {
+      "id": "subjects-01",
+      "category": "subjects",
+      "wrong": "Because is important.",
+      "correct": "I study English because it is important.",
+      "tip": "Complete the idea and add it after because.",
+      "notebook": true
+    },
+    {
+      "id": "subjects-02",
+      "category": "subjects",
+      "wrong": "Might travel somewhere to swim.",
+      "correct": "I might travel somewhere to swim.",
+      "tip": "Add I before might.",
+      "notebook": true
+    },
+    {
+      "id": "subjects-03",
+      "category": "subjects",
+      "wrong": "Then should take an English class.",
+      "correct": "Then she should take an English class.",
+      "tip": "Who should take a class? She.",
+      "notebook": true
+    },
+    {
+      "id": "subjects-04",
+      "category": "subjects",
+      "wrong": "Could make friends and practice.",
+      "correct": "She could make friends and practice.",
+      "tip": "Add a subject before could.",
+      "notebook": true
+    },
+    {
+      "id": "subjects-05",
+      "category": "subjects",
+      "wrong": "Is a beautiful song.",
+      "correct": "It is a beautiful song.",
+      "tip": "Use it when describing a song.",
+      "notebook": false
+    },
+    {
+      "id": "subjects-06",
+      "category": "subjects",
+      "wrong": "Because helps me learn.",
+      "correct": "I listen to music because it helps me learn.",
+      "tip": "Give the main idea and a subject after because.",
+      "notebook": false
+    },
+    {
+      "id": "subjects-07",
+      "category": "subjects",
+      "wrong": "Should listen to English every day.",
+      "correct": "You should listen to English every day.",
+      "tip": "Use you for advice to someone.",
+      "notebook": false
+    },
+    {
+      "id": "subjects-08",
+      "category": "subjects",
+      "wrong": "Want to go to the concert.",
+      "correct": "I want to go to the concert.",
+      "tip": "Add I before want.",
+      "notebook": false
+    },
+    {
+      "id": "subjects-09",
+      "category": "subjects",
+      "wrong": "Has a beautiful voice.",
+      "correct": "She has a beautiful voice.",
+      "tip": "Add the singer as a subject.",
+      "notebook": false
+    },
+    {
+      "id": "subjects-10",
+      "category": "subjects",
+      "wrong": "Is cold today.",
+      "correct": "It is cold today.",
+      "tip": "Weather statements often use it.",
+      "notebook": false
+    },
+    {
+      "id": "subjects-11",
+      "category": "subjects",
+      "wrong": "Can understand the lyrics.",
+      "correct": "I can understand the lyrics.",
+      "tip": "Add I before can.",
+      "notebook": false
+    },
+    {
+      "id": "subjects-12",
+      "category": "subjects",
+      "wrong": "Will practice tomorrow.",
+      "correct": "We will practice tomorrow.",
+      "tip": "Add who will practice.",
+      "notebook": false
+    },
+    {
+      "id": "de-01",
+      "category": "de",
+      "wrong": "I want a class of English.",
+      "correct": "I want an English class.",
+      "tip": "English describes the type of class.",
+      "notebook": true
+    },
+    {
+      "id": "de-02",
+      "category": "de",
+      "wrong": "I like music of Christmas.",
+      "correct": "I like Christmas music.",
+      "tip": "Christmas describes the type of music.",
+      "notebook": false
+    },
+    {
+      "id": "de-03",
+      "category": "de",
+      "wrong": "My guitar of friend is new.",
+      "correct": "My friend's guitar is new.",
+      "tip": "Use the possessive: my friend's.",
+      "notebook": false
+    },
+    {
+      "id": "de-04",
+      "category": "de",
+      "wrong": "She lives near of her job.",
+      "correct": "She lives near her job.",
+      "tip": "Near does not need of.",
+      "notebook": true
+    },
+    {
+      "id": "de-05",
+      "category": "de",
+      "wrong": "I want to listen music of my country.",
+      "correct": "I want to listen to music from my country.",
+      "tip": "Use listen to and from for origin.",
+      "notebook": false
+    },
+    {
+      "id": "de-06",
+      "category": "de",
+      "wrong": "The name of singer is Ana.",
+      "correct": "The singer's name is Ana.",
+      "tip": "Use a possessive for the singer's name.",
+      "notebook": false
+    },
+    {
+      "id": "de-07",
+      "category": "de",
+      "wrong": "He likes songs of love.",
+      "correct": "He likes love songs.",
+      "tip": "Love describes the kind of song.",
+      "notebook": false
+    },
+    {
+      "id": "de-08",
+      "category": "de",
+      "wrong": "The concert is in Friday.",
+      "correct": "The concert is on Friday.",
+      "tip": "Days of the week take on.",
+      "notebook": false
+    },
+    {
+      "id": "de-09",
+      "category": "de",
+      "wrong": "This is guitar of Maria.",
+      "correct": "This is Maria's guitar.",
+      "tip": "Use Maria's to show possession.",
+      "notebook": false
+    },
+    {
+      "id": "de-10",
+      "category": "de",
+      "wrong": "I am at a school of English.",
+      "correct": "I am at an English school.",
+      "tip": "Use English as a noun modifier.",
+      "notebook": false
+    },
+    {
+      "id": "de-11",
+      "category": "de",
+      "wrong": "The singer is from of Venezuela.",
+      "correct": "The singer is from Venezuela.",
+      "tip": "From does not need of.",
+      "notebook": false
+    },
+    {
+      "id": "de-12",
+      "category": "de",
+      "wrong": "I like the songs of the band very much.",
+      "correct": "I really like the band's songs.",
+      "tip": "A possessive is often natural for ownership or association.",
+      "notebook": false
+    },
+    {
+      "id": "modals-01",
+      "category": "modals",
+      "wrong": "You should to eat sushi.",
+      "correct": "You should eat sushi.",
+      "tip": "Should + eat, not should to eat.",
+      "notebook": true
+    },
+    {
+      "id": "modals-02",
+      "category": "modals",
+      "wrong": "I can to sing in English.",
+      "correct": "I can sing in English.",
+      "tip": "Can + sing, without to.",
+      "notebook": false
+    },
+    {
+      "id": "modals-03",
+      "category": "modals",
+      "wrong": "We could to visit a museum.",
+      "correct": "We could visit a museum.",
+      "tip": "Could + visit, without to.",
+      "notebook": false
+    },
+    {
+      "id": "modals-04",
+      "category": "modals",
+      "wrong": "She will to call tomorrow.",
+      "correct": "She will call tomorrow.",
+      "tip": "Will + call, without to.",
+      "notebook": false
+    },
+    {
+      "id": "modals-05",
+      "category": "modals",
+      "wrong": "They might to travel next month.",
+      "correct": "They might travel next month.",
+      "tip": "Might + travel, without to.",
+      "notebook": false
+    },
+    {
+      "id": "modals-06",
+      "category": "modals",
+      "wrong": "You must to wear a seat belt.",
+      "correct": "You must wear a seat belt.",
+      "tip": "Must + wear, without to.",
+      "notebook": false
+    },
+    {
+      "id": "modals-07",
+      "category": "modals",
+      "wrong": "I ought practice more.",
+      "correct": "I ought to practice more.",
+      "tip": "Ought to is an exception: it needs to.",
+      "notebook": false
+    },
+    {
+      "id": "modals-08",
+      "category": "modals",
+      "wrong": "He have to work.",
+      "correct": "He has to work.",
+      "tip": "With he / she / it, use has to.",
+      "notebook": false
+    },
+    {
+      "id": "modals-09",
+      "category": "modals",
+      "wrong": "She should studies English.",
+      "correct": "She should study English.",
+      "tip": "The base form is study, not studies.",
+      "notebook": false
+    },
+    {
+      "id": "modals-10",
+      "category": "modals",
+      "wrong": "I would bought a guitar.",
+      "correct": "I would buy a guitar.",
+      "tip": "Would + buy, not bought.",
+      "notebook": false
+    },
+    {
+      "id": "modals-11",
+      "category": "modals",
+      "wrong": "Can you to help me?",
+      "correct": "Can you help me?",
+      "tip": "Can + help, without to.",
+      "notebook": false
+    },
+    {
+      "id": "modals-12",
+      "category": "modals",
+      "wrong": "He must practices every day.",
+      "correct": "He must practice every day.",
+      "tip": "Must + practice, without -s.",
+      "notebook": false
+    },
+    {
+      "id": "wouldlike-01",
+      "category": "wouldlike",
+      "wrong": "I would like go to the beach.",
+      "correct": "I would like to go to the beach.",
+      "tip": "Would like TO go.",
+      "notebook": true
+    },
+    {
+      "id": "wouldlike-02",
+      "category": "wouldlike",
+      "wrong": "I would like help my family.",
+      "correct": "I would like to help my family.",
+      "tip": "Would like TO help.",
+      "notebook": true
+    },
+    {
+      "id": "wouldlike-03",
+      "category": "wouldlike",
+      "wrong": "I would like learning another language.",
+      "correct": "I would like to learn another language.",
+      "tip": "Would like to + base verb learn.",
+      "notebook": true
+    },
+    {
+      "id": "wouldlike-04",
+      "category": "wouldlike",
+      "wrong": "She would like listen to salsa.",
+      "correct": "She would like to listen to salsa.",
+      "tip": "Would like TO listen.",
+      "notebook": false
+    },
+    {
+      "id": "wouldlike-05",
+      "category": "wouldlike",
+      "wrong": "I would like a buy a piano.",
+      "correct": "I would like to buy a piano.",
+      "tip": "Use would like TO buy.",
+      "notebook": false
+    },
+    {
+      "id": "wouldlike-06",
+      "category": "wouldlike",
+      "wrong": "Would you like come with me?",
+      "correct": "Would you like to come with me?",
+      "tip": "A polite offer uses would like to.",
+      "notebook": false
+    },
+    {
+      "id": "wouldlike-07",
+      "category": "wouldlike",
+      "wrong": "He would like sing with the band.",
+      "correct": "He would like to sing with the band.",
+      "tip": "Use to sing.",
+      "notebook": false
+    },
+    {
+      "id": "wouldlike-08",
+      "category": "wouldlike",
+      "wrong": "We would like going to a concert.",
+      "correct": "We would like to go to a concert.",
+      "tip": "Use the base verb go.",
+      "notebook": false
+    },
+    {
+      "id": "wouldlike-09",
+      "category": "wouldlike",
+      "wrong": "They would like practice together.",
+      "correct": "They would like to practice together.",
+      "tip": "Use to practice.",
+      "notebook": false
+    },
+    {
+      "id": "wouldlike-10",
+      "category": "wouldlike",
+      "wrong": "I like would to learn music.",
+      "correct": "I would like to learn more about music.",
+      "tip": "The expression is would like to.",
+      "notebook": false
+    },
+    {
+      "id": "negatives-01",
+      "category": "negatives",
+      "wrong": "You not should drink more beer.",
+      "correct": "You should not drink more beer.",
+      "tip": "Put not after should.",
+      "notebook": true
+    },
+    {
+      "id": "negatives-02",
+      "category": "negatives",
+      "wrong": "I no can play guitar.",
+      "correct": "I cannot play the guitar.",
+      "tip": "Use cannot or can't, not no can.",
+      "notebook": false
+    },
+    {
+      "id": "negatives-03",
+      "category": "negatives",
+      "wrong": "She does not can sing.",
+      "correct": "She cannot sing.",
+      "tip": "Do not combine does not with can.",
+      "notebook": false
+    },
+    {
+      "id": "negatives-04",
+      "category": "negatives",
+      "wrong": "He should not to go.",
+      "correct": "He should not go.",
+      "tip": "Should not + base verb.",
+      "notebook": false
+    },
+    {
+      "id": "negatives-05",
+      "category": "negatives",
+      "wrong": "Do you can swim?",
+      "correct": "Can you swim?",
+      "tip": "Move can before the subject.",
+      "notebook": false
+    },
+    {
+      "id": "negatives-06",
+      "category": "negatives",
+      "wrong": "You can help me please?",
+      "correct": "Can you help me, please?",
+      "tip": "In standard questions: Can + you + help?",
+      "notebook": false
+    },
+    {
+      "id": "negatives-07",
+      "category": "negatives",
+      "wrong": "Would you to travel with me?",
+      "correct": "Would you travel with me?",
+      "tip": "Would + you + base verb.",
+      "notebook": false
+    },
+    {
+      "id": "negatives-08",
+      "category": "negatives",
+      "wrong": "I would not to buy that.",
+      "correct": "I would not buy that.",
+      "tip": "No to after would not.",
+      "notebook": false
+    },
+    {
+      "id": "negatives-09",
+      "category": "negatives",
+      "wrong": "She no would like pizza.",
+      "correct": "She would not like pizza.",
+      "tip": "Use would not after the subject.",
+      "notebook": false
+    },
+    {
+      "id": "negatives-10",
+      "category": "negatives",
+      "wrong": "Where you can find the lyrics?",
+      "correct": "Where can you find the lyrics?",
+      "tip": "Question word + can + subject.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-01",
+      "category": "conditionals",
+      "wrong": "If I had more money visit China.",
+      "correct": "If I had more money, I would visit China.",
+      "tip": "Add I would to finish the imagined result.",
+      "notebook": true
+    },
+    {
+      "id": "conditionals-02",
+      "category": "conditionals",
+      "wrong": "If I had more time travel.",
+      "correct": "If I had more time, I would travel.",
+      "tip": "The result needs a subject and would.",
+      "notebook": true
+    },
+    {
+      "id": "conditionals-03",
+      "category": "conditionals",
+      "wrong": "If I have a million dollars, I would buy a farm.",
+      "correct": "If I had a million dollars, I would buy a farm.",
+      "tip": "Use had for this imaginary present situation.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-04",
+      "category": "conditionals",
+      "wrong": "If I would have time, I would learn guitar.",
+      "correct": "If I had time, I would learn to play the guitar.",
+      "tip": "Do not normally put would in the if-clause.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-05",
+      "category": "conditionals",
+      "wrong": "If I were rich, would travel.",
+      "correct": "If I were rich, I would travel.",
+      "tip": "Add the subject I to the result.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-06",
+      "category": "conditionals",
+      "wrong": "If I could sing, I can join a band.",
+      "correct": "If I could sing, I would join a band.",
+      "tip": "Keep the hypothetical result with would.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-07",
+      "category": "conditionals",
+      "wrong": "I would go if I will have time.",
+      "correct": "I would go if I had time.",
+      "tip": "Use had in a second conditional.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-08",
+      "category": "conditionals",
+      "wrong": "If she practiced, she will improve.",
+      "correct": "If she practiced, she would improve.",
+      "tip": "Match the imaginary condition with would.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-09",
+      "category": "conditionals",
+      "wrong": "If we had tickets, we go.",
+      "correct": "If we had tickets, we would go.",
+      "tip": "Use would in the result.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-10",
+      "category": "conditionals",
+      "wrong": "If I knew the lyrics, I sing.",
+      "correct": "If I knew the lyrics, I would sing.",
+      "tip": "Use would + sing.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-11",
+      "category": "conditionals",
+      "wrong": "If I had free time I would practice.",
+      "correct": "If I had free time, I would practice.",
+      "tip": "Separate the introductory if-clause with a comma.",
+      "notebook": false
+    },
+    {
+      "id": "conditionals-12",
+      "category": "conditionals",
+      "wrong": "If she had a piano, she will play every day.",
+      "correct": "If she had a piano, she would play every day.",
+      "tip": "Use would, not will, for the imagined result.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-01",
+      "category": "prepositions",
+      "wrong": "I listen English music.",
+      "correct": "I listen to music in English.",
+      "tip": "Listen needs to before the object.",
+      "notebook": true
+    },
+    {
+      "id": "prepositions-02",
+      "category": "prepositions",
+      "wrong": "I will go my house.",
+      "correct": "I will go home.",
+      "tip": "Go home does not need to.",
+      "notebook": true
+    },
+    {
+      "id": "prepositions-03",
+      "category": "prepositions",
+      "wrong": "I live near of my job.",
+      "correct": "I live near my job.",
+      "tip": "Near does not need of.",
+      "notebook": true
+    },
+    {
+      "id": "prepositions-04",
+      "category": "prepositions",
+      "wrong": "I want to go to the concert in Friday.",
+      "correct": "I want to go to the concert on Friday.",
+      "tip": "Use on with days of the week.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-05",
+      "category": "prepositions",
+      "wrong": "She is good in singing.",
+      "correct": "She is good at singing.",
+      "tip": "Good at is the usual combination.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-06",
+      "category": "prepositions",
+      "wrong": "I am interested on jazz.",
+      "correct": "I am interested in jazz.",
+      "tip": "Interested in is the usual combination.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-07",
+      "category": "prepositions",
+      "wrong": "I practice English at Monday morning.",
+      "correct": "I practice English on Monday morning.",
+      "tip": "Use on + day + morning.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-08",
+      "category": "prepositions",
+      "wrong": "We arrived to the concert early.",
+      "correct": "We arrived at the concert early.",
+      "tip": "Arrive at an event or place.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-09",
+      "category": "prepositions",
+      "wrong": "I like to listen at music.",
+      "correct": "I like to listen to music.",
+      "tip": "Listen to, not listen at.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-10",
+      "category": "prepositions",
+      "wrong": "She is married with a musician.",
+      "correct": "She is married to a musician.",
+      "tip": "Married to is the standard expression.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-11",
+      "category": "prepositions",
+      "wrong": "They wait the bus after class.",
+      "correct": "They wait for the bus after class.",
+      "tip": "Wait for something.",
+      "notebook": false
+    },
+    {
+      "id": "prepositions-12",
+      "category": "prepositions",
+      "wrong": "I went to home late.",
+      "correct": "I went home late.",
+      "tip": "Home commonly works without to.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-01",
+      "category": "adverbs",
+      "wrong": "I have to cook very good my food.",
+      "correct": "I have to cook my food very well.",
+      "tip": "Cook is an action: use well, after the object.",
+      "notebook": true
+    },
+    {
+      "id": "adverbs-02",
+      "category": "adverbs",
+      "wrong": "She sings beautiful.",
+      "correct": "She sings beautifully.",
+      "tip": "Describe how she sings with an adverb.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-03",
+      "category": "adverbs",
+      "wrong": "He plays guitar good.",
+      "correct": "He plays the guitar well.",
+      "tip": "Plays is an action: use well.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-04",
+      "category": "adverbs",
+      "wrong": "I speak English slow.",
+      "correct": "I speak English slowly.",
+      "tip": "Slowly describes how you speak.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-05",
+      "category": "adverbs",
+      "wrong": "They practice regular.",
+      "correct": "They practice regularly.",
+      "tip": "Regularly describes practice.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-06",
+      "category": "adverbs",
+      "wrong": "She writes clear.",
+      "correct": "She writes clearly.",
+      "tip": "Clearly describes writes.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-07",
+      "category": "adverbs",
+      "wrong": "I am very well at music.",
+      "correct": "I am very good at music.",
+      "tip": "After am, describe the person with good.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-08",
+      "category": "adverbs",
+      "wrong": "He is a well singer.",
+      "correct": "He is a good singer.",
+      "tip": "Good describes the noun singer.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-09",
+      "category": "adverbs",
+      "wrong": "She listens careful to the lyrics.",
+      "correct": "She listens carefully to the lyrics.",
+      "tip": "Carefully describes listens.",
+      "notebook": false
+    },
+    {
+      "id": "adverbs-10",
+      "category": "adverbs",
+      "wrong": "The band played energetic.",
+      "correct": "The band played energetically.",
+      "tip": "Describe how the band played.",
+      "notebook": false
+    }
+  ],
+  "stages": [
+    {
+      "id": "details",
+      "title": "1. Build a clear sentence",
+      "es": "1. Construye una oración clara",
+      "note": "Subject + verb + adjective + object",
+      "note_es": "Sujeto + verbo + adjetivo + sustantivo"
+    },
+    {
+      "id": "connect",
+      "title": "2. Connect two ideas",
+      "es": "2. Conecta dos ideas",
+      "note": "Use because, but, and or so",
+      "note_es": "Usa because, but, and o so"
+    },
+    {
+      "id": "if",
+      "title": "3. Imaginary situations",
+      "es": "3. Situaciones imaginarias",
+      "note": "If + past simple, I would/could + base verb",
+      "note_es": "If + pasado simple, sujeto + would/could + verbo base"
+    },
+    {
+      "id": "stretch",
+      "title": "4. Complex sentences",
+      "es": "4. Oraciones complejas",
+      "note": "Combine a condition, result and reason or contrast",
+      "note_es": "Combina condición, resultado y razón o contraste"
+    }
+  ],
+  "guided": [
+    {
+      "id": "details-01",
+      "stage": "details",
+      "sentence": "I like relaxing music.",
+      "chunks": [
+        "I",
+        "like",
+        "relaxing music."
+      ],
+      "translation": "Me gusta la música relajante."
+    },
+    {
+      "id": "details-02",
+      "stage": "details",
+      "sentence": "My Venezuelan coworker makes hallacas.",
+      "chunks": [
+        "My Venezuelan coworker",
+        "makes",
+        "hallacas."
+      ],
+      "translation": "Mi compañera venezolana hace hallacas."
+    },
+    {
+      "id": "details-03",
+      "stage": "details",
+      "sentence": "She has a beautiful voice.",
+      "chunks": [
+        "She",
+        "has",
+        "a beautiful voice."
+      ],
+      "translation": "Ella tiene una voz hermosa."
+    },
+    {
+      "id": "details-04",
+      "stage": "details",
+      "sentence": "We should practice English every day.",
+      "chunks": [
+        "We",
+        "should practice",
+        "English every day."
+      ],
+      "translation": "Deberíamos practicar inglés todos los días."
+    },
+    {
+      "id": "details-05",
+      "stage": "details",
+      "sentence": "I would like to learn the guitar.",
+      "chunks": [
+        "I",
+        "would like to learn",
+        "the guitar."
+      ],
+      "translation": "Me gustaría aprender a tocar la guitarra."
+    },
+    {
+      "id": "details-06",
+      "stage": "details",
+      "sentence": "My favorite singer writes love songs.",
+      "chunks": [
+        "My favorite singer",
+        "writes",
+        "love songs."
+      ],
+      "translation": "Mi cantante favorito escribe canciones de amor."
+    },
+    {
+      "id": "details-07",
+      "stage": "details",
+      "sentence": "I can understand simple English lyrics.",
+      "chunks": [
+        "I",
+        "can understand",
+        "simple English lyrics."
+      ],
+      "translation": "Puedo entender letras sencillas en inglés."
+    },
+    {
+      "id": "details-08",
+      "stage": "details",
+      "sentence": "She listens to Colombian music at home.",
+      "chunks": [
+        "She",
+        "listens to",
+        "Colombian music",
+        "at home."
+      ],
+      "translation": "Ella escucha música colombiana en casa."
+    },
+    {
+      "id": "details-09",
+      "stage": "details",
+      "sentence": "My sister should take a short English class.",
+      "chunks": [
+        "My sister",
+        "should take",
+        "a short English class."
+      ],
+      "translation": "Mi hermana deberia tomar una clase corta de inglés."
+    },
+    {
+      "id": "details-10",
+      "stage": "details",
+      "sentence": "He plays the piano very well.",
+      "chunks": [
+        "He",
+        "plays the piano",
+        "very well."
+      ],
+      "translation": "Él toca el piano muy bien."
+    },
+    {
+      "id": "details-11",
+      "stage": "details",
+      "sentence": "We might visit a small concert hall.",
+      "chunks": [
+        "We",
+        "might visit",
+        "a small concert hall."
+      ],
+      "translation": "Quizas visitemos una sala de conciertos pequena."
+    },
+    {
+      "id": "details-12",
+      "stage": "details",
+      "sentence": "I would like to buy a new guitar.",
+      "chunks": [
+        "I",
+        "would like to buy",
+        "a new guitar."
+      ],
+      "translation": "Me gustaría comprar una guitarra nueva."
+    },
+    {
+      "id": "connect-01",
+      "stage": "connect",
+      "sentence": "I like relaxing music because it helps me sleep.",
+      "chunks": [
+        "I like relaxing music",
+        "because",
+        "it helps me sleep."
+      ],
+      "translation": "Me gusta la música relajante porque me ayuda a dormir."
+    },
+    {
+      "id": "connect-02",
+      "stage": "connect",
+      "sentence": "She sings beautifully, but she feels nervous.",
+      "chunks": [
+        "She sings beautifully,",
+        "but",
+        "she feels nervous."
+      ],
+      "translation": "Ella canta maravillosamente, pero se siente nerviosa."
+    },
+    {
+      "id": "connect-03",
+      "stage": "connect",
+      "sentence": "I listen to music, and I learn new English words.",
+      "chunks": [
+        "I listen to music,",
+        "and",
+        "I learn new English words."
+      ],
+      "translation": "Escucho música y aprendo nuevas palabras en inglés."
+    },
+    {
+      "id": "connect-04",
+      "stage": "connect",
+      "sentence": "The concert was expensive, so we stayed home.",
+      "chunks": [
+        "The concert was expensive,",
+        "so",
+        "we stayed home."
+      ],
+      "translation": "El concierto era caro, asi que nos quedamos en casa."
+    },
+    {
+      "id": "connect-05",
+      "stage": "connect",
+      "sentence": "I should practice because I want to improve.",
+      "chunks": [
+        "I should practice",
+        "because",
+        "I want to improve."
+      ],
+      "translation": "Deberia practicar porque quiero mejorar."
+    },
+    {
+      "id": "connect-06",
+      "stage": "connect",
+      "sentence": "My sister likes jazz, but I prefer salsa.",
+      "chunks": [
+        "My sister likes jazz,",
+        "but",
+        "I prefer salsa."
+      ],
+      "translation": "A mi hermana le gusta el jazz, pero yo prefiero la salsa."
+    },
+    {
+      "id": "connect-07",
+      "stage": "connect",
+      "sentence": "He has a good voice, and he plays the guitar.",
+      "chunks": [
+        "He has a good voice,",
+        "and",
+        "he plays the guitar."
+      ],
+      "translation": "Tiene buena voz y toca la guitarra."
+    },
+    {
+      "id": "connect-08",
+      "stage": "connect",
+      "sentence": "I could study at home because the library is closed.",
+      "chunks": [
+        "I could study at home",
+        "because",
+        "the library is closed."
+      ],
+      "translation": "Podría estudiar en casa porque la biblioteca esta cerrada."
+    },
+    {
+      "id": "connect-09",
+      "stage": "connect",
+      "sentence": "I like the melody, but I do not understand the lyrics.",
+      "chunks": [
+        "I like the melody,",
+        "but",
+        "I do not understand the lyrics."
+      ],
+      "translation": "Me gusta la melodía, pero no entiendo la letra."
+    },
+    {
+      "id": "connect-10",
+      "stage": "connect",
+      "sentence": "We would like to attend the show, but we have to work.",
+      "chunks": [
+        "We would like to attend the show,",
+        "but",
+        "we have to work."
+      ],
+      "translation": "Nos gustaría ir al espectáculo, pero tenemos que trabajar."
+    },
+    {
+      "id": "connect-11",
+      "stage": "connect",
+      "sentence": "She was tired, so she listened to relaxing music.",
+      "chunks": [
+        "She was tired,",
+        "so",
+        "she listened to relaxing music."
+      ],
+      "translation": "Ella estaba cansada, asi que escucho música relajante."
+    },
+    {
+      "id": "connect-12",
+      "stage": "connect",
+      "sentence": "I can sing this song because I know the lyrics.",
+      "chunks": [
+        "I can sing this song",
+        "because",
+        "I know the lyrics."
+      ],
+      "translation": "Puedo cantar esta canción porque conozco la letra."
+    },
+    {
+      "id": "if-01",
+      "stage": "if",
+      "sentence": "If I had more time, I would practice the guitar every day.",
+      "chunks": [
+        "If I had more time,",
+        "I would practice",
+        "the guitar",
+        "every day."
+      ],
+      "translation": "Si tuviera más tiempo, practicaría guitarra todos los días."
+    },
+    {
+      "id": "if-02",
+      "stage": "if",
+      "sentence": "If I had a million dollars, I would buy a beautiful farm.",
+      "chunks": [
+        "If I had a million dollars,",
+        "I would buy",
+        "a beautiful farm."
+      ],
+      "translation": "Si tuviera un millon de dólares, compraría una granja hermosa."
+    },
+    {
+      "id": "if-03",
+      "stage": "if",
+      "sentence": "If she had a piano, she could practice at home.",
+      "chunks": [
+        "If she had a piano,",
+        "she could practice",
+        "at home."
+      ],
+      "translation": "Si ella tuviera un piano, podría practicar en casa."
+    },
+    {
+      "id": "if-04",
+      "stage": "if",
+      "sentence": "If I spoke English fluently, I would understand more lyrics.",
+      "chunks": [
+        "If I spoke English fluently,",
+        "I would understand",
+        "more lyrics."
+      ],
+      "translation": "Si hablara inglés con fluidez, entendería más letras."
+    },
+    {
+      "id": "if-05",
+      "stage": "if",
+      "sentence": "If we had tickets, we would go to the concert.",
+      "chunks": [
+        "If we had tickets,",
+        "we would go",
+        "to the concert."
+      ],
+      "translation": "Si tuviéramos entradas, iriamos al concierto."
+    },
+    {
+      "id": "if-06",
+      "stage": "if",
+      "sentence": "If I knew the song, I could sing with you.",
+      "chunks": [
+        "If I knew the song,",
+        "I could sing",
+        "with you."
+      ],
+      "translation": "Si conociera la canción, podría cantar contigo."
+    },
+    {
+      "id": "if-07",
+      "stage": "if",
+      "sentence": "If I lived near my job, I would have more free time.",
+      "chunks": [
+        "If I lived near my job,",
+        "I would have",
+        "more free time."
+      ],
+      "translation": "Si viviera cerca de mi trabajo, tendría más tiempo libre."
+    },
+    {
+      "id": "if-08",
+      "stage": "if",
+      "sentence": "If she practiced every day, she would improve quickly.",
+      "chunks": [
+        "If she practiced every day,",
+        "she would improve",
+        "quickly."
+      ],
+      "translation": "Si practicara todos los días, mejoraria rapidamente."
+    },
+    {
+      "id": "if-09",
+      "stage": "if",
+      "sentence": "If we visited Venezuela, we could learn more about its music.",
+      "chunks": [
+        "If we visited Venezuela,",
+        "we could learn more",
+        "about its music."
+      ],
+      "translation": "Si visitáramos Venezuela, podriamos aprender más de su música."
+    },
+    {
+      "id": "if-10",
+      "stage": "if",
+      "sentence": "If I had a good microphone, I would record a song.",
+      "chunks": [
+        "If I had a good microphone,",
+        "I would record",
+        "a song."
+      ],
+      "translation": "Si tuviera un buen microfono, grabaría una canción."
+    },
+    {
+      "id": "if-11",
+      "stage": "if",
+      "sentence": "If he were here, he would play the guitar.",
+      "chunks": [
+        "If he were here,",
+        "he would play",
+        "the guitar."
+      ],
+      "translation": "Si el estuviera aquí, tocaría la guitarra."
+    },
+    {
+      "id": "if-12",
+      "stage": "if",
+      "sentence": "If I could choose any singer, I would meet Shakira.",
+      "chunks": [
+        "If I could choose any singer,",
+        "I would meet",
+        "Shakira."
+      ],
+      "translation": "Si pudiera elegir a cualquier cantante, conoceria a Shakira."
+    },
+    {
+      "id": "stretch-01",
+      "stage": "stretch",
+      "sentence": "If I had tickets, I would invite my sister because she loves live music.",
+      "chunks": [
+        "If I had tickets,",
+        "I would invite my sister",
+        "because",
+        "she loves live music."
+      ],
+      "translation": "Si tuviera entradas, invitaría a mi hermana porque le encanta la música en vivo."
+    },
+    {
+      "id": "stretch-02",
+      "stage": "stretch",
+      "sentence": "Although English is difficult, I will practice because I want to improve.",
+      "chunks": [
+        "Although English is difficult,",
+        "I will practice",
+        "because",
+        "I want to improve."
+      ],
+      "translation": "Aunque el inglés es dificil, practicare porque quiero mejorar."
+    },
+    {
+      "id": "stretch-03",
+      "stage": "stretch",
+      "sentence": "If I had more money, I would buy a guitar, but I would still take lessons.",
+      "chunks": [
+        "If I had more money,",
+        "I would buy a guitar,",
+        "but",
+        "I would still take lessons."
+      ],
+      "translation": "Si tuviera más dinero, compraría una guitarra, pero aún tomaria clases."
+    },
+    {
+      "id": "stretch-04",
+      "stage": "stretch",
+      "sentence": "When I listen to slow songs, I feel calm because the rhythm is gentle.",
+      "chunks": [
+        "When I listen to slow songs,",
+        "I feel calm",
+        "because",
+        "the rhythm is gentle."
+      ],
+      "translation": "Cuando escucho canciones lentas, me siento tranquila porque el ritmo es suave."
+    },
+    {
+      "id": "stretch-05",
+      "stage": "stretch",
+      "sentence": "If she listened to English music, she could learn new words while she relaxed.",
+      "chunks": [
+        "If she listened to English music,",
+        "she could learn new words",
+        "while",
+        "she relaxed."
+      ],
+      "translation": "Si escuchara música en inglés, podría aprender palabras nuevas mientras se relaja."
+    },
+    {
+      "id": "stretch-06",
+      "stage": "stretch",
+      "sentence": "I would like to go to the concert, but I have to work because my schedule changed.",
+      "chunks": [
+        "I would like to go to the concert,",
+        "but",
+        "I have to work",
+        "because",
+        "my schedule changed."
+      ],
+      "translation": "Me gustaría ir al concierto, pero tengo que trabajar porque cambio mi horario."
+    },
+    {
+      "id": "stretch-07",
+      "stage": "stretch",
+      "sentence": "If we practiced together, we could sing better, and we would have more fun.",
+      "chunks": [
+        "If we practiced together,",
+        "we could sing better,",
+        "and",
+        "we would have more fun."
+      ],
+      "translation": "Si practicaramos juntos, podriamos cantar mejor y nos divertiriamos más."
+    },
+    {
+      "id": "stretch-08",
+      "stage": "stretch",
+      "sentence": "My Venezuelan coworker taught me a traditional song because she wanted to share her culture.",
+      "chunks": [
+        "My Venezuelan coworker",
+        "taught me",
+        "a traditional song",
+        "because",
+        "she wanted to share her culture."
+      ],
+      "translation": "Mi compañera venezolana me enseñó una canción tradicional porque queria compartir su cultura."
+    },
+    {
+      "id": "stretch-09",
+      "stage": "stretch",
+      "sentence": "Even though the song is fast, I can understand the chorus because I practice every day.",
+      "chunks": [
+        "Even though the song is fast,",
+        "I can understand the chorus",
+        "because",
+        "I practice every day."
+      ],
+      "translation": "Aunque la canción es rápida, puedo entender el coro porque practico todos los días."
+    },
+    {
+      "id": "stretch-10",
+      "stage": "stretch",
+      "sentence": "If I understood every word, I would sing along, but I still need more practice.",
+      "chunks": [
+        "If I understood every word,",
+        "I would sing along,",
+        "but",
+        "I still need more practice."
+      ],
+      "translation": "Si entendiera cada palabra, cantaria, pero todavía necesito más practica."
+    },
+    {
+      "id": "stretch-11",
+      "stage": "stretch",
+      "sentence": "When my friend shares a playlist, I listen carefully and I write down new vocabulary.",
+      "chunks": [
+        "When my friend shares a playlist,",
+        "I listen carefully",
+        "and",
+        "I write down new vocabulary."
+      ],
+      "translation": "Cuando mi amiga comparte una lista, escucho con atencion y anoto vocabulario nuevo."
+    },
+    {
+      "id": "stretch-12",
+      "stage": "stretch",
+      "sentence": "If I could live anywhere, I would choose a quiet town because I enjoy peaceful music.",
+      "chunks": [
+        "If I could live anywhere,",
+        "I would choose",
+        "a quiet town",
+        "because",
+        "I enjoy peaceful music."
+      ],
+      "translation": "Si pudiera vivir en cualquier lugar, elegiría un pueblo tranquilo porque disfruto la música relajante."
+    }
+  ]
+}</script>
+<script>
+(function(){'use strict';
+  const DB=JSON.parse(document.getElementById('lessonData').textContent);
+  const KEY='sentence-studio-offline-v1';
+  const get=(id)=>document.getElementById(id);
+  const esc=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const norm=(s)=>String(s||'').toLowerCase().replace(/[\u2018\u2019]/g,"'").replace(/[^a-z0-9' ]/g,'').replace(/\s+/g,' ').trim();
+  const shuffle=(items)=>{let a=[...items];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+  const lookup=new Map(DB.categories.map(x=>[x.id,x]));
+  let memory={solved:{},buildSolved:{},saved:[],missed:{}};
+  try{const raw=JSON.parse(localStorage.getItem(KEY)||'null');if(raw&&typeof raw==='object')memory={...memory,...raw}}catch(e){}
+  let ui={screen:'practice',category:'all',mode:'choose',questionIndex:0,questions:[...DB.questions],chosen:null,correct:false,feedback:'',input:'',showHint:false,showModel:false,wordBank:[],wordOrder:[],streak:0,studioMode:'guided',stage:'details',buildIndex:0,buildBank:[],buildPicked:[],buildFeedback:'',buildSuccess:false,custom:false,es:true};
+  const store=()=>{try{localStorage.setItem(KEY,JSON.stringify(memory))}catch(e){}};
+  const toast=(message)=>{let el=get('toast');el.textContent=message;el.classList.add('show');clearTimeout(toast.timeout);toast.timeout=setTimeout(()=>el.classList.remove('show'),2400)};
+  const speak=(sentence)=>{if(!('speechSynthesis' in window)){toast('Speech is not available in this browser.');return}try{speechSynthesis.cancel();let s=new SpeechSynthesisUtterance(sentence);s.lang='en-US';s.rate=.82;speechSynthesis.speak(s)}catch(e){toast('Speech could not start.')}};
+  function updateHeader(){let done=Object.keys(memory.solved).length+Object.keys(memory.buildSolved).length;let all=DB.questions.length+DB.guided.length;get('headerCount').textContent=`${done} of ${all} mastered`;get('headerRing').style.setProperty('--p',Math.round(done/all*100)+'%');get('streakCounter').textContent=ui.streak+' ✓';get('guidedDone').textContent=Object.keys(memory.buildSolved).length;get('guidedTotal').textContent=DB.guided.length;get('heroCount').textContent=`${DB.questions.length} grammar examples`;get('heroBuildCount').textContent=`${DB.guided.length} sentence builds`}
+  function navigate(to){ui.screen=to;document.querySelectorAll('[data-screen]').forEach(b=>{let is=b.dataset.screen===to;b.classList.toggle('active',is);b.setAttribute('aria-current',is?'page':'false')});document.querySelectorAll('main > section.screen').forEach(el=>el.hidden=el.id!=='screen-'+to);if(to==='practice')renderPractice();if(to==='studio')renderStudio();if(to==='rules')renderRules();window.scrollTo({top:0,behavior:'smooth'})}
+  function filtered(){return ui.category==='all'?[...DB.questions]:DB.questions.filter(q=>q.category===ui.category)}
+  function resetQView(){ui.chosen=null;ui.correct=false;ui.feedback='';ui.input='';ui.showHint=false;ui.showModel=false;ui.wordOrder=[];let q=ui.questions[ui.questionIndex];ui.wordBank=q?shuffle(q.correct.split(' ').map((word,i)=>({word,id:i}))):[];ui.choiceOrder=Math.random()<.5?['wrong','correct']:['correct','wrong']}
+  function chooseCategory(cat){ui.category=cat;ui.questionIndex=0;ui.questions=filtered();resetQView();renderPractice()}
+  function changeMode(m){ui.mode=m;resetQView();renderPractice()}
+  function moveQ(amount){ui.questionIndex=(ui.questionIndex+amount+ui.questions.length)%ui.questions.length;resetQView();renderPractice()}
+  function showFeedback(q){const cat=lookup.get(q.category);if(!ui.feedback && !ui.showModel && !ui.showHint)return '';
+    let good=ui.correct,wrong=ui.feedback==='wrong';let title=good?'Great work! / ¡Muy bien!':wrong?'Compare and try again':'Teaching hint / Pista';
+    let feedbackHtml=wrong?`<p>This checker accepts the model wording, but other correct sentences are possible. Compare the structure before trying again.</p>`:'';
+    let hintHtml=ui.showHint||wrong||good?`<p><strong>Rule:</strong> ${esc(cat.rule)}</p><p class="es-line">${esc(cat.rule_es)}</p>`:'';
+    let tip=good||ui.showModel?`<p>${esc(q.tip)}</p>`:'';
+    let model=good||ui.showModel?`<div class="model-answer">${esc(q.correct)}</div>`:'';
+    let actions=ui.mode==='fix'&&wrong&&!good?`<div class="helper-actions"><button type="button" class="secondary" id="showModelBtn">${ui.showModel?'Hide model':'See model answer'}</button><button type="button" class="secondary" id="manualAcceptBtn">Teacher accepts my answer ✓</button></div>`:'';
+    let speakBtn=good||ui.showModel?`<button type="button" class="secondary" id="hearModelBtn" style="margin-top:11px">▶ Hear natural English</button>`:'';
+    return `<div class="feedback ${good?'good':wrong?'bad':''}" role="status"><strong>${title}</strong>${feedbackHtml}${hintHtml}${model}${tip}${actions}${speakBtn}</div>`;
+  }
+  function renderPractice(){let el=get('skillList');let cats=[{id:'all',title:'All skills · mixed review',es:'Todo el contenido',icon:'✦'},...DB.categories];el.innerHTML=cats.map(c=>{let n=c.id==='all'?DB.questions.length:DB.questions.filter(q=>q.category===c.id).length;let mastered=c.id==='all'?Object.keys(memory.solved).length:DB.questions.filter(q=>q.category===c.id&&memory.solved[q.id]).length;return `<button class="skill ${ui.category===c.id?'active':''}" data-category="${esc(c.id)}" type="button" aria-pressed="${ui.category===c.id}"><span class="skill-icon">${esc(c.icon)}</span><span style="min-width:0"><strong>${esc(c.title)}</strong><small class="es-line">${esc(c.es)}</small></span><span class="skill-count">${mastered}/${n}</span></button>`}).join('');
+    document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===ui.mode));let q=ui.questions[ui.questionIndex];if(!q){get('exerciseCard').textContent='No examples available.';return}let cat=lookup.get(q.category);let pct=Math.round((ui.questionIndex+1)/ui.questions.length*100);
+    let card=`<div class="exercise-top"><div class="caps">${esc(cat.title)} <span style="color:#b3c4b6">/</span> <span class="question-counter">${ui.questionIndex+1} of ${ui.questions.length}</span></div><span class="pill ${q.notebook?'notebook':''}">${q.notebook?'✎ Inspired by her notebook':'✦ Extra practice'}</span></div><div class="thinbar"><div style="width:${pct}%"></div></div>`;
+    if(ui.mode==='choose'){
+      card+=`<div class="prompt-overline">Spot the natural English</div><h3 class="problem">Which sentence sounds more natural?</h3><p class="instruction es-line">¿Cuál de estas dos oraciones suena más natural en inglés?</p><div class="choices">${ui.choiceOrder.map((key,i)=>{let sentence=key==='correct'?q.correct:q.wrong;let chosen=ui.chosen===key;let valid=key==='correct';let cls=ui.chosen!==null && chosen ? (valid?'selected correct':'selected incorrect'):'';if(ui.correct&&valid)cls='selected correct';return `<button type="button" class="choice ${cls}" data-choice="${key}" aria-pressed="${chosen}"><span class="letter">${i?'B':'A'}</span><span>${esc(sentence)}</span></button>`}).join('')}</div>`;
+    }else if(ui.mode==='fix'){
+      card+=`<div class="prompt-overline">Find and fix the mistake</div><h3 class="problem">${esc(q.wrong)}</h3><p class="instruction">Rewrite this sentence in natural English. <span class="es-line">Escribe la oracion correcta.</span></p><label class="input-label" for="repairInput">Your corrected sentence</label><input class="repair-input" id="repairInput" type="text" autocomplete="off" autocapitalize="sentences" spellcheck="true" value="${esc(ui.input)}" placeholder="Type your corrected sentence..."/><div class="helper-actions"><button type="button" class="primary" id="checkRepair">Check my sentence ↗</button><button type="button" class="secondary" id="clearRepair">Clear</button></div>`;
+    }else{
+      card+=`<div class="prompt-overline">Put the words in order</div><h3 class="problem" style="font-size:25px">Build the natural sentence.</h3><p class="instruction">Tap the words in the right order. <span class="es-line">Toca las palabras en el orden correcto.</span></p><span class="input-label">Your sentence</span><div class="reorder-zone" id="reorderZone">${ui.wordOrder.map(i=>`<button type="button" class="token is-picked" data-picked="${i}">${esc(ui.wordBank.find(x=>x.id===i)?.word||'')}</button>`).join('')}</div><span class="input-label" style="margin-top:18px">Word tiles</span><div class="tokens" id="wordTokens">${ui.wordBank.filter(x=>!ui.wordOrder.includes(x.id)).map(x=>`<button type="button" class="token" data-word="${x.id}">${esc(x.word)}</button>`).join('')}</div><div class="helper-actions"><button type="button" class="primary" id="checkOrder">Check word order ↗</button><button type="button" class="secondary" id="clearOrder">Start over</button></div>`;
+    }
+    card+=showFeedback(q);
+    card+=`<div class="exercise-footer"><div class="helper">${memory.solved[q.id]?'✓ Mastered':'☆ Not yet mastered'} &nbsp; · &nbsp; <button type="button" id="toggleHint" style="background:none;border:0;color:#0c6955;font-weight:800;padding:0;cursor:pointer">${ui.showHint?'Hide hint':'Show grammar hint'}</button></div><div class="nav-arrows"><button type="button" class="secondary" id="prevQ">← Previous</button><button type="button" class="primary" id="nextQ">Next example →</button></div></div>`;get('exerciseCard').innerHTML=card;
+    let mastered=ui.questions.filter(q=>memory.solved[q.id]).length;get('skillProgressText').textContent=`${mastered} / ${ui.questions.length} examples mastered in this selection.`;
+    updateHeader();
+  }
+  function markQ(q){ui.correct=true;ui.feedback='right';ui.streak++;if(!memory.solved[q.id]){memory.solved[q.id]=true;store();toast('A new grammar example mastered!')}renderPractice()}
+  function handlePracticeClick(e){let t=e.target.closest('button');if(!t)return;
+    if(t.dataset.category){chooseCategory(t.dataset.category);return}if(t.dataset.mode){changeMode(t.dataset.mode);return}
+    if(t.id==='nextQ'){moveQ(1);return}if(t.id==='prevQ'){moveQ(-1);return}
+    if(t.id==='toggleHint'){ui.showHint=!ui.showHint;renderPractice();return}
+    if(t.id==='clearOrder'){ui.wordOrder=[];ui.feedback='';ui.correct=false;renderPractice();return}
+    if(t.id==='clearRepair'){ui.input='';ui.feedback='';ui.correct=false;renderPractice();get('repairInput')?.focus();return}
+    if(t.id==='checkRepair'){let q=ui.questions[ui.questionIndex];ui.input=get('repairInput').value.trim();if(!ui.input){toast('Write a sentence first.');return}if(norm(ui.input)===norm(q.correct)){markQ(q)}else{ui.feedback='wrong';ui.streak=0;renderPractice()}return}
+    if(t.id==='showModelBtn'){ui.showModel=!ui.showModel;renderPractice();return}
+    if(t.id==='manualAcceptBtn'){markQ(ui.questions[ui.questionIndex]);return}
+    if(t.id==='hearModelBtn'){speak(ui.questions[ui.questionIndex].correct);return}
+    if(t.id==='checkOrder'){let q=ui.questions[ui.questionIndex];let ordered=ui.wordOrder.map(i=>ui.wordBank.find(x=>x.id===i)?.word||'').join(' ');if(!ui.wordOrder.length){toast('Tap the word tiles first.');return}if(norm(ordered)===norm(q.correct))markQ(q);else{ui.feedback='wrong';ui.streak=0;ui.showHint=true;renderPractice()}return}
+    if('word' in t.dataset){let i=Number(t.dataset.word);ui.wordOrder.push(i);ui.feedback='';renderPractice();return}
+    if('picked' in t.dataset){let i=Number(t.dataset.picked);ui.wordOrder.splice(ui.wordOrder.indexOf(i),1);ui.feedback='';renderPractice();return}
+    if(t.dataset.choice){if(ui.correct)return;let q=ui.questions[ui.questionIndex];ui.chosen=t.dataset.choice;if(t.dataset.choice==='correct')markQ(q);else{ui.feedback='wrong';ui.streak=0;renderPractice()}return}
+  }
+  function stageQs(){return DB.guided.filter(q=>q.stage===ui.stage)}
+  function resetBuild(){ui.buildPicked=[];ui.buildFeedback='';ui.buildSuccess=false;let q=stageQs()[ui.buildIndex];ui.buildBank=q?shuffle(q.chunks.map((word,id)=>({word,id}))):[]}
+  function setStage(id){ui.stage=id;ui.buildIndex=0;resetBuild();renderStudio()}
+  function moveBuild(n){ui.buildIndex=(ui.buildIndex+n+stageQs().length)%stageQs().length;resetBuild();renderStudio()}
+  function renderStudio(){document.querySelectorAll('[data-studiomode]').forEach(b=>b.classList.toggle('active',b.dataset.studiomode===ui.studioMode));get('guidedStudio').hidden=ui.studioMode!=='guided';get('composeStudio').hidden=ui.studioMode!=='compose';if(ui.studioMode==='compose'){renderCompose();return}let stages=DB.stages;get('buildTabs').innerHTML=stages.map(st=>{let solved=DB.guided.filter(q=>q.stage===st.id&&memory.buildSolved[q.id]).length;return `<button type="button" class="build-step ${ui.stage===st.id?'active':''}" data-stage="${esc(st.id)}">${esc(st.title)}<small>${solved}/12 completed</small></button>`}).join('');
+    let st=stages.find(x=>x.id===ui.stage), qs=stageQs(),q=qs[ui.buildIndex];let percent=Math.round((ui.buildIndex+1)/qs.length*100);
+    let results=ui.buildFeedback?`<div class="feedback ${ui.buildSuccess?'good':'bad'}"><strong>${ui.buildSuccess?'Perfect sentence! / ¡Perfecto!':'Not quite — check the order.'}</strong><p>${ui.buildSuccess?'You placed every part in the correct position.':'Begin with the subject or introductory clause, then add the main verb and connector.'}</p><p class="es-line">${ui.buildSuccess?'Muy bien. Practica la misma estructura con otra idea.':'Revisa el orden y vuelve a intentarlo.'}</p>${ui.buildSuccess?`<div class="model-answer">${esc(q.sentence)}</div><button class="secondary" type="button" id="hearBuild" style="margin-top:12px">▶ Listen to your sentence</button>`:''}</div>`:'';
+    get('guidedCard').innerHTML=`<div class="step-progress"><span>${esc(st.title)}</span><strong>${ui.buildIndex+1} / ${qs.length}</strong></div><div class="thinbar" style="margin:10px 0 20px"><div style="width:${percent}%"></div></div><h3 style="font-size:25px;line-height:1.24;letter-spacing:-.035em;margin:0 0 8px">Put these ideas in the right order.</h3><p class="studio-intro es-line">Ordena los bloques para formar una oracion natural en ingles.</p><div class="target-box"><small>Meaning / Significado</small><p class="translation es-line">${esc(q.translation)}</p><p class="english-caption">${esc(st.note)}.</p></div><span class="input-label">Your sentence / Tu oracion</span><div class="build-area ${ui.buildPicked.length?'':'empty'}" id="builtSentence">${ui.buildPicked.map(i=>`<button class="token" type="button" data-unpick="${i}">${esc(ui.buildBank.find(x=>x.id===i)?.word||'')}</button>`).join('')}</div><span class="input-label" style="margin-top:20px">Word and phrase blocks</span><div class="build-bank">${ui.buildBank.filter(x=>!ui.buildPicked.includes(x.id)).map(x=>`<button type="button" class="token" data-pick="${x.id}">${esc(x.word)}</button>`).join('')}</div><div class="helper-actions"><button class="primary" type="button" id="checkBuild">Check sentence ↗</button><button class="secondary" type="button" id="clearBuild">Start over</button><button class="secondary" type="button" id="hintBuild">Grammar hint</button></div>${results}<div class="exercise-footer"><span class="helper">${memory.buildSolved[q.id]?'✓ Mastered':'☆ In progress'}</span><div class="nav-arrows"><button type="button" class="secondary" id="prevBuild">← Previous</button><button type="button" class="primary" id="nextBuild">Next build →</button></div></div>`;
+    get('buildInfo').innerHTML=`<div class="icon-circle">✦</div><h3>${esc(st.title)}</h3><p>${esc(st.note)}</p><p class="es-line">${esc(st.note_es)}</p><div class="formula">${esc(st.id==='if'?'If I had time, I would practice.':st.id==='connect'?'Idea + because + reason.':st.id==='stretch'?'Condition + result + reason.':'Subject + verb + detail.')}</div>`;updateHeader();
+  }
+  function handleBuildClick(e){let t=e.target.closest('button');if(!t)return;if(t.dataset.stage){setStage(t.dataset.stage);return}if(t.id==='nextBuild'){moveBuild(1);return}if(t.id==='prevBuild'){moveBuild(-1);return}if(t.id==='clearBuild'){ui.buildPicked=[];ui.buildFeedback='';ui.buildSuccess=false;renderStudio();return}if(t.id==='hintBuild'){toast(DB.stages.find(x=>x.id===ui.stage).note);return}if(t.id==='hearBuild'){speak(stageQs()[ui.buildIndex].sentence);return}if('pick' in t.dataset){ui.buildPicked.push(Number(t.dataset.pick));ui.buildFeedback='';renderStudio();return}if('unpick' in t.dataset){ui.buildPicked.splice(ui.buildPicked.indexOf(Number(t.dataset.unpick)),1);ui.buildFeedback='';renderStudio();return}if(t.id==='checkBuild'){let q=stageQs()[ui.buildIndex];let sentence=ui.buildPicked.map(i=>q.chunks[i]).join(' ');if(!ui.buildPicked.length){toast('Choose some phrase blocks first.');return}ui.buildSuccess=norm(sentence)===norm(q.sentence);ui.buildFeedback=ui.buildSuccess?'right':'wrong';if(ui.buildSuccess){memory.buildSolved[q.id]=true;store();toast('Sentence completed!')}renderStudio();return}}
+  const patterns={
+    because:{label:'BECAUSE · Give a reason',a:['I like relaxing music','I should practice English','My sister listens to music every day','I would like to attend a concert','I can understand this song','I love traditional music'],b:['it helps me sleep','I want to speak more confidently','she enjoys the lyrics','I love live music','the words are simple','it reminds me of my family'],join:'because',labelA:'Main idea / Idea principal',labelB:'Reason / Razon'},
+    but:{label:'BUT · Show a contrast',a:['I like this song','She can play the piano','I would like to see the band','I understand the chorus','The singer has a beautiful voice','We want to practice'],b:['the rhythm is too fast','she does not have time today','the tickets are expensive','some words are difficult','I do not like the lyrics','our schedules are different'],join:', but',labelA:'First idea / Primera idea',labelB:'Contrast / Contraste'},
+    and:{label:'AND · Add an idea',a:['I listen to music every day','I learn vocabulary from songs','She sings beautifully','We should practice this week','My friend plays the guitar','I enjoy English classes'],b:['I sing along with my favorite songs','I write down new words','she writes her own songs','we can use simple lyrics','he also plays the piano','I practice with my friends'],join:', and',labelA:'First idea / Primera idea',labelB:'Next idea / Otra idea'},
+    so:{label:'SO · Show a result',a:['The concert was expensive','I do not know the lyrics','She loves music','My English class starts early','We want to improve','The song is relaxing'],b:['we stayed home','I looked them up','she practices every day','I go to bed early','we listen to English songs','I listen to it before bed'],join:', so',labelA:'Situation / Situacion',labelB:'Result / Resultado'},
+    if:{label:'IF · Imagine a possibility',a:['If I had more time,','If I had a million dollars,','If I spoke English fluently,','If I had concert tickets,','If my sister lived nearby,','If I could play the piano,'],b:['I would practice the guitar every day','I would buy a beautiful piano','I would understand more song lyrics','I would invite my best friend','we could practice English together','I could join a small band'],join:' ',labelA:'If + past / Si + pasado',labelB:'Would or could + verb / Resultado'},
+    when:{label:'WHEN · Talk about time',a:['When I listen to relaxing music,','When I study English,','When I go to a concert,','When my friend shares a playlist,','When I feel tired,','When I hear a new song,'],b:['I feel calm','I write down useful words','I sing my favorite songs','I discover new singers','I listen to slow songs','I pay attention to the lyrics'],join:' ',labelA:'When clause / Cuando',labelB:'Main clause / Oracion principal'}
+  };
+  function composeSentence(){let key=get('composePattern').value||'because';let p=patterns[key];let custom=get('customMode').checked;let a=(custom?get('customA').value:get('composeA').value).trim().replace(/[.!?\s]+$/,'');let b=(custom?get('customB').value:get('composeB').value).trim().replace(/[.!?\s]+$/,'');if(!a||!b)return 'Add both parts to see your sentence.';if(key==='if'||key==='when'){return a.replace(/,+$/,'')+', '+b+'.'}let result=a+(p.join.startsWith(',')?'': ' ')+p.join+' '+b+'.';return result.replace(/\s+/g,' ').replace(/\s+,/g,',')}
+  function currentSentence(){return get('composePreview').textContent.trim()}
+  function renderCompose(){const pKey=get('composePattern').value||'because';let pattern=patterns[pKey];get('composeA').hidden=ui.custom;get('composeB').hidden=ui.custom;get('customA').hidden=!ui.custom;get('customB').hidden=!ui.custom;get('customMode').checked=ui.custom;get('composeLabelA').textContent=pattern.labelA;get('composeLabelB').textContent=pattern.labelB;get('composePreview').textContent=composeSentence();renderNotebook()}
+  function renderNotebook(){let saved=memory.saved||[];get('savedSentences').innerHTML=saved.length?saved.slice(-12).reverse().map((s,i)=>`<div class="saved-item"><span>${esc(s)}</span><button type="button" data-remove="${saved.length-1-i}" aria-label="Remove this saved sentence">×</button></div>`).join(''):'<p style="font-size:12px;color:#87968a;margin:0">Your saved sentences will appear here.</p>'}
+  function initCompose(){get('composePattern').innerHTML=Object.entries(patterns).map(([key,p])=>`<option value="${key}">${esc(p.label)}</option>`).join('');refreshComposeOptions()}
+  function refreshComposeOptions(){let key=get('composePattern').value;let p=patterns[key]||patterns.because;for(let side of ['a','b']){let id=side.toUpperCase();get('compose'+id).innerHTML=p[side].map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('')}get('customA').value=p.a[0];get('customB').value=p.b[0];renderCompose()}
+  function renderRules(){get('ruleGrid').innerHTML=DB.categories.map(c=>{let q=DB.questions.find(q=>q.category===c.id&&q.notebook)||DB.questions.find(q=>q.category===c.id);let sample=DB.questions.find(q=>q.category===c.id&&!q.notebook)||q;return `<article class="rule-card"><div class="rule-head"><span class="rule-icon">${esc(c.icon)}</span><div><h3>${esc(c.title)}</h3><div style="font-size:11px;color:#85968a" class="es-line">${esc(c.es)}</div></div></div><p>${esc(c.rule)}</p><p class="es-line" style="font-style:italic">${esc(c.rule_es)}</p><div class="formula-label">Structure / Estructura</div><div class="formula-box">${esc(c.formula)}</div><div class="samplebad">✕ ${esc(q.wrong)}</div><div class="samplegood">✓ ${esc(q.correct)}</div><div class="samplegood" style="margin-top:10px;font-weight:600;font-size:12px">Example: ${esc(sample.correct)}</div><div class="helper-actions"><button class="secondary" type="button" data-ruleplay="${esc(c.id)}">Practice this rule →</button></div></article>`}).join('')+`<article class="rule-card"><div class="rule-head"><span class="rule-icon">↔</span><div><h3>Connectors + commas</h3><div style="font-size:11px;color:#85968a" class="es-line">Conectores y comas</div></div></div><p><strong>Because</strong> gives a reason; <strong>but</strong> shows contrast; <strong>if</strong> introduces a condition; <strong>when</strong> introduces time. Use a comma after an opening <em>if/when</em> clause.</p><p class="es-line">Because = porque; but = pero; if = si; when = cuando. Usa una coma despues de una clausula inicial con if o when.</p><div class="formula-label">Build longer sentences</div><div class="formula-box">If + past, subject + would + verb.</div><div class="samplegood">✓ If I had time, I would learn the guitar.</div><div class="samplegood">✓ I practice because I want to improve.</div><div class="samplegood">✓ I like salsa, but she prefers jazz.</div><div class="helper-actions"><button class="secondary" type="button" data-rulebuild="connect">Build complex sentences →</button></div></article>`}
+  function exportProgress(){const payload={app:'Sentence Studio',exportedAt:new Date().toISOString(),available:DB.questions.length+DB.guided.length,masteredGrammar:Object.keys(memory.solved).length,masteredBuilds:Object.keys(memory.buildSolved).length,grammarBySkill:DB.categories.map(c=>({skill:c.title,completed:DB.questions.filter(q=>q.category===c.id&&memory.solved[q.id]).length,available:DB.questions.filter(q=>q.category===c.id).length})),savedSentences:memory.saved||[],data:memory};let text=JSON.stringify(payload,null,2);let url=URL.createObjectURL(new Blob([text],{type:'application/json'}));let a=document.createElement('a');a.href=url;a.download='sentence-studio-progress.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Progress exported as JSON.')}
+  document.querySelectorAll('[data-screen]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.screen)));
+  get('languageToggle').addEventListener('click',()=>{ui.es=!ui.es;document.body.classList.toggle('hide-es',!ui.es);get('languageToggle').textContent=ui.es?'ES hints: On':'ES hints: Off';get('languageToggle').setAttribute('aria-pressed',ui.es?'true':'false')});
+  get('screen-practice').addEventListener('click',handlePracticeClick);
+  get('exerciseCard').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='repairInput'){e.preventDefault();get('checkRepair')?.click()}});
+  get('exerciseCard').addEventListener('input',e=>{if(e.target.id==='repairInput')ui.input=e.target.value});
+  get('shuffleQuestions').addEventListener('click',()=>{ui.questions=shuffle(filtered());ui.questionIndex=0;resetQView();renderPractice();toast('Examples shuffled.')});
+  get('screen-studio').addEventListener('click',e=>{let sub=e.target.closest('[data-studiomode]');if(sub){ui.studioMode=sub.dataset.studiomode;renderStudio();return}handleBuildClick(e)});
+  get('jumpToRules').addEventListener('click',()=>navigate('rules'));
+  get('rulesToPractice').addEventListener('click',()=>navigate('practice'));
+  get('ruleGrid').addEventListener('click',e=>{let t=e.target.closest('[data-ruleplay]');if(t){chooseCategory(t.dataset.ruleplay);navigate('practice');return}let b=e.target.closest('[data-rulebuild]');if(b){setStage(b.dataset.rulebuild);navigate('studio')}});
+  get('composePattern').addEventListener('change',refreshComposeOptions);
+  get('composeA').addEventListener('change',renderCompose);
+  get('composeB').addEventListener('change',renderCompose);
+  get('customMode').addEventListener('change',e=>{ui.custom=e.target.checked;renderCompose()});
+  get('customA').addEventListener('input',renderCompose);
+  get('customB').addEventListener('input',renderCompose);
+  get('saveCompose').addEventListener('click',()=>{const s=currentSentence();if(!s||s.startsWith('Add both parts')){toast('Complete your sentence first.');return}memory.saved.push(s);store();renderNotebook();toast('Saved to your sentence notebook.')});
+  get('copyCompose').addEventListener('click',()=>{let s=currentSentence();if(navigator.clipboard?.writeText){navigator.clipboard.writeText(s).then(()=>toast('Sentence copied.')).catch(()=>toast('Copy is not permitted in this browser.'))}else{toast('Select the sentence to copy it.')}});
+  get('speakCompose').addEventListener('click',()=>speak(currentSentence()));
+  get('savedSentences').addEventListener('click',e=>{let t=e.target.closest('[data-remove]');if(t){memory.saved.splice(Number(t.dataset.remove),1);store();renderNotebook()}});
+  get('exportProgress').addEventListener('click',exportProgress);
+  get('resetProgress').addEventListener('click',()=>{if(!confirm('Reset all saved progress and sentence notebook entries in this browser?'))return;memory={solved:{},buildSolved:{},saved:[],missed:{}};store();ui.streak=0;resetQView();resetBuild();renderPractice();renderStudio();toast('Progress cleared.')});
+  initCompose();resetQView();resetBuild();renderPractice();renderStudio();renderRules();updateHeader();
+})();
+</script>
+</body>
+</html>
